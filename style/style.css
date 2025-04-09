@@ -4,28 +4,28 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f8f8f8; /* Light gray background for the entire page */
+    color: #333; /* Dark gray text color */
 }
 
 /* Navbar styles */
-
 nav {
-    background-color: #ffffff;
-    color: #658cc2;
-    padding: 10px 0;
+    background-color: #fff; /* White navbar background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 .navbar {
-    width: 80%;
+    width: 90%; /* Adjust width for better spacing */
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 15px 0; /* Add padding to the navbar */
 }
 
 .logo img {
-    height: 80px; /* Adjust logo height as needed */
-    margin-right: 20px; /* Add some space between logo and links */
+    height: 60px; /* Adjust logo height */
+    margin-right: 20px;
 }
 
 .nav-links {
@@ -33,106 +33,274 @@ nav {
 }
 
 .nav-item {
-    color: #658cc2;
+    color: #333; /* Dark gray text color */
     text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
+    font-weight: 500; /* Medium font weight */
+    font-size: 16px;
     padding: 10px 15px;
+    transition: color 0.3s ease; /* Smooth color transition on hover */
 }
 
 .nav-item:hover {
-    background-color: #e0f7fa;
-    border-radius: 4px;
-    color: #0056b3;
+    color: #007bff; /* Blue color on hover */
 }
 
 .auth-buttons a {
-    color: #658cc2;
+    color: #fff; /* White button text color */
     text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-    padding: 10px 15px;
-    border: 1px solid #658cc2;
-    border-radius: 4px;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #007bff; /* Blue button background */
+    border-radius: 5px;
     margin-left: 10px;
+    transition: background-color 0.3s ease; /* Smooth background color transition on hover */
 }
 
 .auth-buttons a:hover {
-    background-color: #e0f7fa;
-    color: #0056b3;
+    background-color: #0056b3; /* Darker blue on hover */
 }
-
 
 /* Container Styles */
 .container {
-    width: 80%;
-    margin: 20px auto;
+    width: 90%; /* Adjust container width */
+    margin: 30px auto;
     background-color: #fff;
-    padding: 30px;
+    padding: 40px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
     text-align: center;
-    color: #333;
+    color: #222; /* Darker heading color */
     margin-bottom: 20px;
+    font-size: 2.8em;
 }
 
-/* Auth Forms (Login/Register) */
-.auth-forms {
-    margin-top: 20px;
-}
-
-.auth-forms form {
-    display: flex;
-    flex-direction: column;
-}
-
-.auth-forms input {
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-.auth-forms button {
-    padding: 12px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.auth-forms button:hover {
-    background-color: #0056b3;
-}
-
-.auth-forms p {
+/* Hero Section */
+.hero-section {
     text-align: center;
-    margin-top: 15px;
+    padding: 120px 0;
+    position: relative;
+    color: #fff;
+    background-image: url('assets/images/bg.jpg'); /* Replace with a better image */
+    background-size: cover;
+    background-position: center;
 }
 
-.auth-forms a {
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Darker overlay */
+    mix-blend-mode: multiply; /* Blend the overlay with the image */
+    z-index: -1;
+}
+
+.hero-section h1 {
+    font-size: 3em;
+    margin-bottom: 15px;
+    font-family: 'Montserrat', sans-serif; /* Example font */
+    font-weight: 700;
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    font-family: 'Open Sans', sans-serif; /* Example font */
+    line-height: 1.6;
+}
+
+.cta-button {
+    background: linear-gradient(to right, #007bff, #66a3ff); /* Gradient background */
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-5px); /* Move up on hover */
+}
+
+/* Featured Admissions */
+.featured-admissions {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.featured-admissions h2 {
+    margin-bottom: 30px;
+    font-size: 2.2em;
+}
+
+.admission-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.admission-item {
+    border: 1px solid #ddd;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.admission-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.admission-item h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.admission-item p {
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.admission-item a {
     color: #007bff;
     text-decoration: none;
+    font-weight: 500;
 }
 
-.auth-forms a:hover {
+.admission-item a:hover {
     text-decoration: underline;
+}
+
+/* Services Section */
+.services-section {
+    background-color: #f0f8ff; /* Light blue background */
+    padding: 60px 0;
+    text-align: center;
+}
+
+.services-section h2 {
+    margin-bottom: 30px;
+    font-size: 2.2em;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.service-item {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.service-item h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.service-item p {
+    line-height: 1.6;
+    color: #555;
+}
+
+/* How It Works Section */
+.how-it-works-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.how-it-works-section h2 {
+    margin-bottom: 30px;
+    font-size: 2.2em;
+}
+
+.how-it-works-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.step {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.step h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.step p {
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Contact Section */
+.contact-section {
+    text-align: center;
+    padding: 60px 0;
+}
+
+.contact-section h2 {
+    margin-bottom: 30px;
+    font-size: 2.2em;
+}
+
+.contact-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #0056b3;
 }
 
 /* Footer styles */
 footer {
     background-color: #333;
-    color: white;
+    color: #fff;
     text-align: center;
-    padding: 20px 0;
+    padding: 30px 0;
 }
 
 .footer-content {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -140,124 +308,40 @@ footer {
 }
 
 .footer-links a {
-    color: white;
+    color: #fff;
     text-decoration: none;
     margin: 0 10px;
+    transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
+    color: #007bff;
     text-decoration: underline;
 }
 
-/* Add any additional styles here */
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar, .container, .footer-content {
+        width: 95%; /* Adjust width for smaller screens */
+    }
 
-/* ... (Existing CSS) ... */
+    .hero-section {
+        padding: 80px 20px;
+    }
 
-/* Hero Section */
-.hero-section {
-    text-align: center;
-    padding: 80px 0;
-    /* background-color: #ffffff; */
-    /* opacity: 0.5; */
-    /* background-image: url('/assets/images/back-ground.jpg');
-    background-size: cover;
-    background-position: center; */
+    .hero-section h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-section p {
+        font-size: 1.1em;
+    }
+
+    .admission-grid, .services-grid, .how-it-works-steps {
+        grid-template-columns: 1fr; /* Stack items vertically */
+    }
+
+    .admission-item, .service-item, .step {
+        padding: 20px;
+    }
 }
-
-.hero-section h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-.hero-section p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
-}
-
-.cta-button {
-    background-color: #007bff;
-    color: white;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.cta-button:hover {
-    background-color: #0056b3;
-}
-
-/* Featured Admissions */
-.featured-admissions {
-    padding: 40px 0;
-}
-
-.admission-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-.admission-item {
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 5px;
-}
-
-.admission-item h3 {
-    margin-top: 0;
-}
-
-/* Services Section */
-.services-section {
-    background-color: #82bfdb;
-    padding: 40px 0;
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 10px;
-}
-
-.service-item {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-}
-
-/* How It Works Section */
-.how-it-works-section {
-    padding: 40px 0;
-}
-
-.how-it-works-steps {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.step {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-}
-
-/* Contact Section */
-.contact-section {
-    text-align: center;
-    padding: 40px 0;
-}
-
-.contact-button {
-    background-color: #007bff;
-    color: white;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.contact-button:hover {
-    background-color: #0056b3;
-}
-/* ... (Existing CSS) ... */
