@@ -9,7 +9,7 @@
 
     <div class="container">
 
-    <section class="hero-section" style="background-image: url('assets/images/bg.jpg'); background-size: cover; background-position: center;">
+    <section class="hero-section" style="background-image: url('assets/images/new-bg.jpg'); background-size: cover; background-position: center;">
         <h1>Your Gateway to Higher Education</h1>
         <p>Find comprehensive admission information for UG, PG, and Diploma programs across various states.</p>
         <a href="#featured-admissions" class="cta-button">Explore Admissions</a>

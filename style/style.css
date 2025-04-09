@@ -81,10 +81,10 @@ h1 {
 /* Hero Section */
 .hero-section {
     text-align: center;
-    padding: 120px 0;
+    padding: 150px 0;
     position: relative;
-    color: #fff;
-    background-image: url('assets/images/bg.jpg'); /* Replace with a better image */
+    color: #fff; /* White text */
+    background-image: url('assets/images/new-bg.jpg'); /* Replace with your image path */
     background-size: cover;
     background-position: center;
 }
@@ -96,39 +96,42 @@ h1 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Darker overlay */
-    mix-blend-mode: multiply; /* Blend the overlay with the image */
+    background-color: rgba(0, 0, 0, 0.6); /* Adjusted overlay */
     z-index: -1;
 }
 
 .hero-section h1 {
-    font-size: 3em;
-    margin-bottom: 15px;
-    font-family: 'Montserrat', sans-serif; /* Example font */
+    font-size: 3.2em; /* Larger heading */
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif; /* Modern, bold heading font */
     font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    letter-spacing: 1px;
 }
 
 .hero-section p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
-    font-family: 'Open Sans', sans-serif; /* Example font */
-    line-height: 1.6;
+    font-size: 1.1em; /* Smaller paragraph */
+    margin-bottom: 40px;
+    font-family: 'Open Sans', sans-serif; /* Legible paragraph font */
+    line-height: 1.7;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
 }
 
 .cta-button {
-    background: linear-gradient(to right, #007bff, #66a3ff); /* Gradient background */
+    background: linear-gradient(to right, #007bff, #66a3ff);
     color: #fff;
-    padding: 15px 30px;
+    padding: 20px 40px;
     text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.1em;
+    border-radius: 8px;
+    font-size: 1.2em;
     font-weight: 600;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cta-button:hover {
-    transform: translateY(-5px); /* Move up on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* Featured Admissions */
@@ -345,3 +348,5 @@ footer {
         padding: 20px;
     }
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap');
