@@ -8,9 +8,10 @@ body {
 }
 
 /* Navbar styles */
+
 nav {
-    background-color: #007bff;
-    color: white;
+    background-color: #ffffff;
+    color: #658cc2;
     padding: 10px 0;
 }
 
@@ -22,29 +23,45 @@ nav {
     align-items: center;
 }
 
+.logo img {
+    height: 80px; /* Adjust logo height as needed */
+    margin-right: 20px; /* Add some space between logo and links */
+}
+
+.nav-links {
+    display: flex;
+}
+
 .nav-item {
-    color: white;
+    color: #658cc2;
     text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
     padding: 10px 15px;
 }
 
 .nav-item:hover {
-    background-color: #0056b3;
+    background-color: #e0f7fa;
     border-radius: 4px;
+    color: #0056b3;
 }
 
 .auth-buttons a {
-    color: white;
+    color: #658cc2;
     text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
     padding: 10px 15px;
-    border: 1px solid white;
+    border: 1px solid #658cc2;
     border-radius: 4px;
     margin-left: 10px;
 }
 
 .auth-buttons a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: #e0f7fa;
+    color: #0056b3;
 }
+
 
 /* Container Styles */
 .container {
@@ -133,3 +150,114 @@ footer {
 }
 
 /* Add any additional styles here */
+
+/* ... (Existing CSS) ... */
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 80px 0;
+    /* background-color: #ffffff; */
+    opacity: 0.5;
+    /* background-image: url('/assets/images/back-ground.jpg');
+    background-size: cover;
+    background-position: center; */
+}
+
+.hero-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+/* Featured Admissions */
+.featured-admissions {
+    padding: 40px 0;
+}
+
+.admission-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.admission-item {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.admission-item h3 {
+    margin-top: 0;
+}
+
+/* Services Section */
+.services-section {
+    background-color: #f0f0f0;
+    padding: 40px 0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.service-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* How It Works Section */
+.how-it-works-section {
+    padding: 40px 0;
+}
+
+.how-it-works-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.step {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Contact Section */
+.contact-section {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.contact-button {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.contact-button:hover {
+    background-color: #0056b3;
+}
+/* ... (Existing CSS) ... */
