@@ -13,8 +13,8 @@
             <a href="how_it_works.php" class="nav-item">How It Works</a>
         </div>
         <div class="auth-buttons">
-            <a href="#" id="login-link">Login</a>
-            <a href="#" id="register-link">Register</a>
+            <a href="login.php" id="login-link">Login</a>
+            <a href="register.php" id="register-link">Register</a>
         </div>
     </div>
 </nav>

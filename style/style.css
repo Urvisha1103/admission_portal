@@ -472,3 +472,270 @@ button[type="submit"]:hover {
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap');
+
+
+/* change by Gabu Daxa */
+
+
+
+/* Register code */
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    background-color: #f2f7fb;
+    min-height: 90vh;
+  }
+  
+  .register-form {
+    background-color: #fff;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    max-width: 450px;
+    width: 100%;
+  }
+  
+  .register-form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #002147;
+  }
+  
+  .register-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .register-form input {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .register-form .btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .register-form .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .register-link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+  }
+  
+  .register-link a {
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  .register-form select {
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 100%;
+  }
+  
+
+
+  /* login form  */
+
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    background-color: #f2f7fb;
+    min-height: 80vh;
+  }
+  
+  .login-form {
+    background-color: #fff;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .login-form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #002147;
+  }
+  
+  .login-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .login-form input {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .login-form .btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .login-form .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .login-link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+  }
+  
+  .login-link a {
+    color: #007bff;
+    text-decoration: none;
+  }
+/* About page */
+
+/* General container */
+.about-container {
+    max-width: 1200px;
+    padding: 40px 20px;
+    margin-top: 20PX;
+    margin-bottom: 20px;
+  }
+  
+  /* Heading */
+  .about-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #002147;
+    margin-bottom: 40px;
+    line-height: 1.2;
+  }
+  
+  /* Card grid */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+  
+  /* Info cards */
+  .info-card {
+    background-color: #fff;
+    padding: 25px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  
+  .info-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Card icon */
+  .info-card .icon {
+    font-size: 40px;
+    color: #007bff;
+    margin-bottom: 15px;
+  }
+  
+  /* Card title */
+  .info-card h2 {
+    font-size: 1.5rem;
+    color: #002147;
+    margin-bottom: 12px;
+  }
+  
+  /* Paragraph */
+  .info-card p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+    padding: 0 10px;
+  }
+
+
+
+  /* how it work page  */
+
+.how-it-works {
+    padding: 50px 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+  }
+  
+  .section-heading {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #002147;
+  }
+  
+  .steps-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  .step-box {
+    background-color: #ffffff;
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+  }
+  
+  .step-box:hover {
+    transform: translateY(-5px);
+  }
+  
+  .step-icon {
+    font-size: 40px;
+    color: #007bff;
+    margin-bottom: 20px;
+  }
+  
+  .step-box h3 {
+    font-size: 20px;
+    color: #002147;
+    margin-bottom: 10px;
+  }
+  
+  .step-box p {
+    color: #444;
+    font-size: 15px;
+  }
