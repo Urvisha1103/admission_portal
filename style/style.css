@@ -59,7 +59,7 @@ nav {
 
 .auth-buttons a:hover {
     background-color: #0056b3; /* Darker blue on hover */
-}
+} 
 
 /* Container Styles */
 .container {
@@ -625,6 +625,7 @@ button[type="submit"]:hover {
   }
 /* About page */
 
+
 /* General container */
 .about-container {
     max-width: 1200px;
@@ -690,52 +691,132 @@ button[type="submit"]:hover {
 
 
   /* how it work page  */
-
+/* How It Works Section */
 .how-it-works {
-    padding: 50px 20px;
-    background-color: #f8f9fa;
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.section-heading {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.steps-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.step-box {
+    background: #fff;
+    padding: 25px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.step-box:hover {
+    transform: translateY(-5px);
+}
+
+.step-icon {
+    font-size: 40px;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.step-box h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.step-box p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+}
+
+
+/* Service page */
+.service-section {
+    background-color: #eaf6ff;
+    padding: 60px 20px;
     text-align: center;
   }
   
   .section-heading {
-    font-size: 32px;
+    font-size: 2.5rem;
+    font-weight: bold;
     margin-bottom: 40px;
-    color: #002147;
+    color: #222;
   }
   
-  .steps-wrapper {
+  .service-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 30px;
-    max-width: 1100px;
-    margin: 0 auto;
+    max-width: 1200px;
+    margin: auto;
   }
   
-  .step-box {
-    background-color: #ffffff;
-    padding: 30px 20px;
-    border-radius: 15px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
+  .service-card {
+    background-color: #fff;
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
-  .step-box:hover {
-    transform: translateY(-5px);
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
   }
   
-  .step-icon {
-    font-size: 40px;
-    color: #007bff;
-    margin-bottom: 20px;
-  }
-  
-  .step-box h3 {
-    font-size: 20px;
-    color: #002147;
+  .service-card h3 {
+    font-size: 1.2rem;
+    color: #222;
     margin-bottom: 10px;
+    font-weight: 600;
   }
   
-  .step-box p {
-    color: #444;
-    font-size: 15px;
+  .service-card p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
   }
+  
+  .service-icon {
+    font-size: 36px;
+    color: #007bff;
+    margin-bottom: 15px;
+  }
+  
+  .service-img-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+  }
+  .service-card {
+    background-color: #fff;
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  }
+  
+  .service-icon {
+    font-size: 36px;
+    margin-bottom: 15px;
+  }
+    
