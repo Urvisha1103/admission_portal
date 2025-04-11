@@ -27,7 +27,7 @@
     <select id="role" name="role" required>
       <option value="">-- Select Role --</option>
       <option value="student">Student</option>
-      <option value="admin">Admin</option>
+      <option value="admin">College/University</option>
     </select>
 
     <label for="password">Password</label>

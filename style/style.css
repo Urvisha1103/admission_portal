@@ -416,61 +416,85 @@ button[type="submit"]:hover {
     }
 }
 
-/* style/style.css */
-
-.services-page {
-    padding: 50px;
-}
-
-.services-page h1 {
+/* Service page */
+.service-section {
+    background-color: #eaf6ff;
+    padding: 60px 20px;
     text-align: center;
+  }
+  
+  .section-heading {
+    font-size: 2.5rem;
+    font-weight: bold;
     margin-bottom: 40px;
-    color: #007bff;
-}
-
-.service {
-    display: flex;
-    align-items: center;
-    margin-bottom: 40px;
-    border: 1px solid #eee;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.service-icon {
-    flex: 0 0 100px;
-    margin-right: 20px;
-}
-
-.service-icon img {
-    max-width: 100%;
-    height: auto;
-}
-
-.service-content h2 {
+    color: #222;
+  }
+  
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .service-card {
+    background-color: #fff;
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  }
+  
+  .service-card h3 {
+    font-size: 1.2rem;
+    color: #222;
     margin-bottom: 10px;
-    color: #333;
-}
-
-.service-content p {
-    line-height: 1.6;
+    font-weight: 600;
+  }
+  
+  .service-card p {
+    font-size: 1rem;
     color: #555;
-}
+    line-height: 1.6;
+  }
+  
+  .service-icon {
+    font-size: 36px;
+    color: #007bff;
+    margin-bottom: 15px;
+  }
+  
+  .service-img-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+  }
+  .service-card {
+    background-color: #fff;
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  }
+  
+  .service-icon {
+    font-size: 36px;
+    margin-bottom: 15px;
+  }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .service {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .service-icon {
-        margin-right: 0;
-        margin-bottom: 20px;
-    }
-}
-
+  
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap');
 
 
