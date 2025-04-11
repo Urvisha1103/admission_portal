@@ -23,19 +23,24 @@
                 $sql = "SELECT admissions.*, states.state_name, programs.program_name FROM admissions INNER JOIN states ON admissions.state_id = states.id INNER JOIN programs ON admissions.program_id = programs.id LIMIT 6"; // Limit to 6 featured admissions
                 $result = $conn->query($sql);
 
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<div class='admission-item'>";
-                        echo "<h3>" . $row['announcement'] . "</h3>";
-                        echo "<p>State: " . $row['state_name'] . "</p>";
-                        echo "<p>Program: " . $row['program_name'] . "</p>";
-                        echo "<p>Start Date: " . $row['start_date'] . "</p>";
-                        echo "<a href='" . $row['link'] . "' target='_blank'>Learn More</a>";
-                        echo "</div>";
+                if ($result) { // Check if the query was successful
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<div class='admission-item'>";
+                            echo "<h3>" . $row['announcement'] . "</h3>";
+                            echo "<p>State: " . $row['state_name'] . "</p>";
+                            echo "<p>Program: " . $row['program_name'] . "</p>";
+                            echo "<p>Start Date: " . $row['start_date'] . "</p>";
+                            echo "<a href='" . $row['link'] . "' target='_blank'>Learn More</a>";
+                            echo "</div>";
+                        }
+                    } else {
+                        echo "<p>No featured admissions found.</p>";
                     }
                 } else {
-                    echo "<p>No featured admissions found.</p>";
+                    echo "Error: " . $conn->error; // Display the error message
                 }
+                
                 $conn->close();
                 ?>
             </div>

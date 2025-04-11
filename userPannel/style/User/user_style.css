@@ -1,0 +1,126 @@
+/* user_style.css */
+
+/* User Navbar */
+
+.user-navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 0;
+}
+
+.user-navbar-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-navbar-logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.user-navbar-menu {
+    list-style: none;
+    display: flex;
+}
+
+.user-navbar-menu li {
+    margin-left: 20px;
+}
+
+.user-navbar-menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.user-navbar-menu a:hover {
+    background-color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .user-navbar-container {
+        flex-direction: column;
+        align-items: flex-start; /* Align items to the left on smaller screens */
+    }
+
+    .user-navbar-menu {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .user-navbar-menu li {
+        margin-left: 0;
+        margin-top: 5px;
+    }
+}
+
+/* User Footer */
+.user-footer {
+    background-color: #f0f0f0;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.user-footer-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.user-footer p {
+    margin-bottom: 10px;
+}
+
+.user-footer-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.user-footer-links li {
+    margin: 0 15px;
+}
+
+.user-footer-links a {
+    color: #333;
+    text-decoration: none;
+}
+
+/* User Home Page */
+.card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.status-accepted {
+    color: green;
+}
+
+.status-pending {
+    color: orange;
+}
+
+.status-rejected {
+    color: red;
+}
+
+.dashboard-section h2 i {
+    margin-right: 10px;
+}
