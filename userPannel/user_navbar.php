@@ -2,8 +2,8 @@
     <div class="user-navbar-container">
         <a href="user_dashboard.php" class="user-navbar-logo">Admission Dashboard</a>
         <ul class="user-navbar-menu">
-            <li><a href="user_dashboard.php">Dashboard</a></li>
-            <li><a href="search_admissions.php">Search</a></li>
+            <li><a href="user_home.php">Dashboard</a></li>
+            <li><a href="entrance_tests.php">Entrance Tests</a></li>
             <li><a href="saved_admissions.php">Saved</a></li>
             <li><a href="applied_admissions.php">Applications</a></li>
             <li><a href="user_profile.php">Profile</a></li>

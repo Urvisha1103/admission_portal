@@ -16,116 +16,96 @@
     }
     ?>
 
-    <div class="user-container">
-        <h1>Welcome to Your Admission Dashboard</h1>
+<div class="search-filter-section">
+    <h2>Search and Filter Admissions</h2>
+    <form action="" method="GET">
+        <input type="text" name="keyword" placeholder="Enter keyword">
 
-        <section class="dashboard-section">
-            <h2><i class="fas fa-bullhorn"></i> Latest Announcements</h2>
-            <div class="announcement-list card-list">
-                <?php
-                // Fetch Announcements
-                $sql = "SELECT * FROM announcements";
-                $result = $conn->query($sql);
-
-                $announcements = [];
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        $announcements[] = $row;
-                    }
+        <select name="state">
+            <option value="">All States</option>
+            <?php
+            // Fetch states from the database
+            include '../database/db_config.php';
+            $states_sql = "SELECT * FROM states";
+            $states_result = $conn->query($states_sql);
+            if ($states_result && $states_result->num_rows > 0) {
+                while ($state = $states_result->fetch_assoc()) {
+                    echo "<option value='" . htmlspecialchars($state['id']) . "'>" . htmlspecialchars($state['state_name']) . "</option>";
                 }
+            }
+            ?>
+        </select>
 
-                foreach ($announcements as $announcement) {
-                    echo '<div class="card">';
-                    echo '<h3>' . $announcement["title"] . '</h3>';
-                    echo '<p>State: ' . $announcement["state"] . ', Date: ' . date('F j, Y', strtotime($announcement["date"])) . '</p>';
-                    echo '<a href="' . $announcement["link"] . '" class="dashboard-link">View Details</a>';
-                    echo '</div>';
+        <select name="program">
+            <option value="">All Programs</option>
+            <?php
+            // Fetch programs from the database
+            $programs_sql = "SELECT * FROM programs";
+            $programs_result = $conn->query($programs_sql);
+            if ($programs_result && $programs_result->num_rows > 0) {
+                while ($program = $programs_result->fetch_assoc()) {
+                    echo "<option value='" . htmlspecialchars($program['id']) . "'>" . htmlspecialchars($program['program_name']) . "</option>";
                 }
-                ?>
-            </div>
-        </section>
+            }
+            ?>
+        </select>
 
-        <section class="dashboard-section">
-            <h2><i class="fas fa-calendar-alt"></i> Upcoming Entrance Tests</h2>
-            <div class="test-list card-list">
-                <?php
-                // Fetch Tests
-                $sql = "SELECT * FROM tests";
-                $result = $conn->query($sql);
+        <button type="submit">Search</button>
+    </form>
+</div>
 
-                $tests = [];
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        $tests[] = $row;
-                    }
+<div class="announcement-section">
+    <h2>Admissions Results</h2>
+    <table class="admissions-table">
+        <thead>
+            <tr>
+                <th>University</th>
+                <th>Program</th>
+                <th>Announcement</th>
+                <th>Deadline</th>
+                <th>Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            // Build the SQL query based on search/filter criteria
+            $sql = "SELECT * FROM admissions WHERE 1=1"; // Start with a true condition
+
+            if (isset($_GET['keyword']) && !empty($_GET['keyword'])) {
+                $keyword = $conn->real_escape_string($_GET['keyword']);
+                $sql .= " AND (university_name LIKE '%" . $keyword . "%' OR program_name LIKE '%" . $keyword . "%' OR announcement LIKE '%" . $keyword . "%')";
+            }
+
+            if (isset($_GET['state']) && !empty($_GET['state'])) {
+                $state = $conn->real_escape_string($_GET['state']);
+                $sql .= " AND state_id = '" . $state . "'";
+            }
+
+            if (isset($_GET['program']) && !empty($_GET['program'])) {
+                $program = $conn->real_escape_string($_GET['program']);
+                $sql .= " AND program_id = '" . $program . "'";
+            }
+
+            $result = $conn->query($sql);
+
+            if ($result && $result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr>";
+                    echo "<td>" . htmlspecialchars($row['university_name']) . "</td>";
+                    echo "<td>" . htmlspecialchars($row['program_name']) . "</td>";
+                    echo "<td>" . htmlspecialchars($row['announcement']) . "</td>";
+                    echo "<td>" . htmlspecialchars($row['application_deadline']) . "</td>";
+                    echo "<td><a href='" . htmlspecialchars($row['application_link']) . "' target='_blank'>Apply</a></td>";
+                    echo "</tr>";
                 }
-
-                foreach ($tests as $test) {
-                    echo '<div class="card">';
-                    echo '<h3>' . $test["name"] . '</h3>';
-                    echo '<p>Date: ' . date('F j, Y', strtotime($test["date"])) . ', Time: ' . date('h:i A', strtotime($test["time"])) . '</p>';
-                    echo '<a href="' . $test["link"] . '" class="dashboard-link">View Details</a>';
-                    echo '</div>';
-                }
-                ?>
-            </div>
-        </section>
-
-        <section class="dashboard-section">
-            <h2><i class="fas fa-file-alt"></i> Application Status</h2>
-            <div class="application-list card-list">
-                <?php
-                // Fetch Applications
-                $sql = "SELECT * FROM applications WHERE user_id = " . $_SESSION['user_id'];
-                $result = $conn->query($sql);
-
-                $applications = [];
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        $applications[] = $row;
-                    }
-                }
-
-                foreach ($applications as $application) {
-                    $statusClass = ($application["status"] == "Accepted") ? "status-accepted" : (($application["status"] == "Pending") ? "status-pending" : "status-rejected");
-                    echo '<div class="card">';
-                    echo '<h3>' . $application["program"] . '</h3>';
-                    echo '<p>Status: <span class="' . $statusClass . '">' . $application["status"] . '</span></p>';
-                    echo '<a href="' . $application["link"] . '" class="dashboard-link">Track Application</a>';
-                    echo '</div>';
-                }
-                ?>
-            </div>
-        </section>
-
-        <section class="dashboard-section">
-            <h2><i class="fas fa-bookmark"></i> Saved Admissions</h2>
-            <div class="saved-list card-list">
-                <?php
-                // Fetch Saved Admissions
-                $sql = "SELECT * FROM saved_admissions WHERE user_id = " . $_SESSION['user_id'];
-                $result = $conn->query($sql);
-
-                $saved = [];
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        $saved[] = $row;
-                    }
-                }
-
-                foreach ($saved as $save) {
-                    echo '<div class="card">';
-                    echo '<h3>' . $save["title"] . '</h3>';
-                    echo '<p>State: ' . $save["state"] . '</p>';
-                    echo '<a href="' . $save["link"] . '" class="dashboard-link">View Details</a>';
-                    echo '</div>';
-                }
-                $conn->close();
-                ?>
-            </div>
-            <a href="userPannel/saved_admissions.php" class="user-button">View All Saved Admissions</a>
-        </section>
-    </div>
+            } else {
+                echo "<tr><td colspan='5'>No admissions found.</td></tr>";
+            }
+            $conn->close();
+            ?>
+        </tbody>
+    </table>
+</div>
 
     <?php include 'user_footer.php'; ?>
 </body>

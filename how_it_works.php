@@ -18,20 +18,20 @@
 
     <div class="step-box">
       <i class="fas fa-search step-icon"></i>
-      <h3>1. Data Collection</h3>
-      <p>Our web crawler automatically collects real-time data from verified university and government admission portals.</p>
+      <h3>1. Search & Filter</h3>
+      <p>Use our search and filter tools to find relevant admission listings.</p>
     </div>
 
     <div class="step-box">
-      <i class="fas fa-database step-icon"></i>
-      <h3>2. Data Processing</h3>
-      <p>Information is filtered, categorized, and stored into a structured format for fast retrieval and clarity.</p>
+      <i class="fas fa-info-circle step-icon"></i>
+      <h3>2. Explore Details</h3>
+      <p>View detailed information about admission announcements and programs.</p>
     </div>
 
     <div class="step-box">
-      <i class="fas fa-bell step-icon"></i>
-      <h3>3. Notification</h3>
-      <p>Users get notified about deadlines, entrance exams, and seat availability through the portal interface.</p>
+      <i class="fas fa-paper-plane step-icon"></i>
+      <h3>3. Apply Directly</h3>
+      <p>Follow the provided links to apply directly to the institutions.</p>
     </div>
 
     <div class="step-box">
@@ -47,5 +47,3 @@
 
 </body>
 </html>
-
-
